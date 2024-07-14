@@ -53,4 +53,4 @@ app.post('/dream', async (req, res) => {
     }
 });
 
-app.listen()
+app.listen(() => console.log('make art on https://localhost:8080/dream'))
