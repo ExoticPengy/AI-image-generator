@@ -7,7 +7,7 @@ form.addEventListener('submit', async (e) => {
     showSpinner();
     const data = new FormData(form);
 
-    const response = await fetch('https://ai-image-generator-jade-six.vercel.app/dream', {
+    const response = await fetch('https://ai-image-generator-jade-six.vercel.app:8080/dream', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
