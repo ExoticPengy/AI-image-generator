@@ -3,9 +3,8 @@ import './style.css';
 const form = document.querySelector('form');
 
 form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  e.preventDefault();
     showSpinner();
-
     const data = new FormData(form);
 
     const response = await fetch('http://localhost:8080/dream', {
@@ -17,6 +16,7 @@ form.addEventListener('submit', async (e) => {
         prompt: data.get('prompt'),
       }),
     });
+    
 
     if (response.ok) {
       const { image } = await response.json();
@@ -28,9 +28,9 @@ form.addEventListener('submit', async (e) => {
       alert(err);
       console.error(err);
     }
-    
 
     hideSpinner();
+
 });
 
 function showSpinner() {

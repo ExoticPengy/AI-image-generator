@@ -3,19 +3,19 @@ dotenv.config();
 
 const modelslabApiKey = process.env.MODELSLAB
 
-import express, { response } from 'express';
+import express from 'express';
 import cors from 'cors';
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-let myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
 app.post('/dream', async (req, res) => {
     try {
         const prompt = req.body.prompt;
+
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
         let raw = JSON.stringify({
             "key" : modelslabApiKey,
